@@ -1,0 +1,14 @@
+#Recipes{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #match{
+    font-size: 200%;
+    padding: auto;
+    background-color: red;
+    margin-top: 10rem;
+  }

@@ -1,0 +1,41 @@
+.AboutContainer{
+    width: 60%;
+    height: 30rem;
+    margin: 0.5rem auto;
+    background-color: rgba(205, 249, 252, 0.747);
+    border-radius: 1rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.4);
+    color: rgb(70, 70, 70);
+    box-shadow: 0.2rem 0.2rem 1rem rgba(20, 20, 20, 0.8);
+  }
+  #h3{
+      color: #000000;
+      font-size: 2rem;
+  }
+  .AboutInfo{
+    width: 70%;
+    color: #000000d8;
+    margin: 1rem auto;
+    font-size: 1.3rem;
+    text-align: justify;
+  }
+  #h6{
+    display: block;
+    font-size: 1.5rem;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+#santi{
+      font-size: 1.1rem;
+      margin-top: 2rem;
+      font-style: italic;
+      color: #000000;
+  }
+  hr{
+      margin-top: -1rem;
+    width: 30%;
+    border-top: 1px solid #51ff00;
+  }
