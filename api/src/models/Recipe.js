@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
       allowNull: true
     },
     instructions:  { 
-      type: DataTypes.TEXT,
+      type: DataTypes.ARRAY(DataTypes.TEXT),
       allowNull: true
     }
   });

@@ -2,18 +2,19 @@ const {Diet} = require('../db');
 const{BASE_URL, RECEPE_DETAIL, BASE_NEXT} = require('../../constants');
 const axios = require('axios');
 require('dotenv').config;
-const {API_KEY} = process.env;
-const { v4: uuid } = require('uuid');
+// const {API_KEY} = process.env;
+// const { v4: uuid } = require('uuid');
 //https://api.spoonacular.com/recipes/complexSearch?apiKey=40eb347614844e4ebd3af15d526c3d7e&addRecipeInformation=true
 
 const dietTypes = async(req, res)=>{
 //  const r=[];
 //  const d = [];
  try{ 
-     //if(Diet.length>8) {return 'hola';};// hay que hacer esto!!!!!!!!!!!!!!!!!!!!!!!! que no se boorre la base de datos!
+     
     const dbQuery = await Diet.findAll()
+    const a = dbQuery.map(e=> e= e.name)
         // if(dbQuery.length > 9) {
-            return res.json(dbQuery)
+            return res.json(a)
         // }
     // const apiResponse = await axios.get(`${BASE_URL}${BASE_NEXT}?addRecipeInformation=true&${API_KEY}`);
     // apiResponse.data.results.forEach(recipe => r.push(recipe));

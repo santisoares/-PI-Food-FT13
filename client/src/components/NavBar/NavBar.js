@@ -13,6 +13,7 @@ function NavBar(props) {
   
   function handleSubmit(e) {
     e.preventDefault()
+    // props.allRecipes.filter(e=>e.title.toLowerCase().includes(recipe))
     props.searchRecipes(recipe)
     setRecipes('')
   }
@@ -39,6 +40,7 @@ function NavBar(props) {
 function mapStateToProps(state) {
   return {
     recipes: state.searchedRecipes,
+    allRecipes: state.allRecipes
   }
 }
 function mapDispatchToProps(dispatch) {

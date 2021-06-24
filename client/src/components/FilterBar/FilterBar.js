@@ -22,8 +22,8 @@ function FilterBar (props) {
           <div className='Filters'>
           {/* <button onClick={(e) => {e.preventDefault(); props.order('')}}>CleanFilter</button> */}
             <button onClick={(e) => { e.preventDefault(); props.filter('');}}>Clean Filters</button>
-            {props.diets.map(d => <button key={d.id}
-              onClick={(e) => {e.preventDefault(); props.filter(d.name)}}>{d.name}</button>)}
+            {props.diets.map(d => <button key={d}
+              onClick={(e) => {e.preventDefault(); props.filter(d)}}>{d}</button>)}
           </div>
         </div>
         <div>

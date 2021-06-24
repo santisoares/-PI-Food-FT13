@@ -3,6 +3,7 @@ import './Recipe.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { searchRecipeDetail } from '../../redux/Actions'
+import foto from '../foto/image.jpg'
 
 function Recipe(props) {
 return (
@@ -12,16 +13,17 @@ return (
       {/* {props.diets.filter(d => {return (props.diet !== undefined)?props.diet.includes(d.name.toLowerCase()) || props.diet.find(diet => d.name === diet.name): props.diet})
         .map(d => <span className='diets' key={d.id}>{d.name?d.name:props.diet}</span>)} */}
         
-      {props.diets.filter(d => {if (props.diet !== undefined){return props.diet.includes(d.name.toLowerCase()) || props.diet.find(diet => d.name === diet.name)}
-      else{return props.diet}})
-        .map(d => <span className='diets' key={d.id}>{d.name?d.name:props.diet}</span>)}
+    {props.diets.filter(d => {if (props.diet !== undefined){return props.diet.includes(d.toLowerCase()) || props.diet.find(diet => d === diet)}
+      else{return props.diets}})
+        .map(d => <span className='diets' >{d?d:props.diet}</span>)}
+        
 
          {/*{props.diets.filter(d => {return props.diet.forEach(e=>e.includes(d.name.toLowerCase())) || props.diet.find(diet => d.name === diet.name)})
         .map(d => <span className='diets' key={d.id}>{d.name}</span>)} */}
     </div>
     <div className='Spoon'>spoonacularScore: {props.score}</div>
     </div>
-    <img src={props.img} className='RecipeImage' alt='recipe' />
+    <img src={props.img?props.img:foto} className='RecipeImage' alt='recipe' />
     <Link to={`/recipe/${props.id}`}>
       <button onClick={() => props.searchRecipeDetail(props.id)} className='MoreInfo'>More Info</button>
     </Link>

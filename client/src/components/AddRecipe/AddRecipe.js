@@ -12,7 +12,8 @@ function AddRecipe(props) {
     spoonacularScore: 0,
     healthScore: 0,
     instructions: '',
-    diets: []
+    diets: [],
+    // Diets:''
   })
 
   function handleSubmit(e) {
@@ -30,13 +31,16 @@ function AddRecipe(props) {
     if (!form.summary) {
       errors.summary = 'Summary is required';
     }
+    // if(!form.instructions){
+    //   errors.instructions = 'instructions are required'
+    // }
     return errors;
   };
 
   const handleInputChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value // .split('.')
     });
     setErrors(validate({
       ...form,
@@ -65,18 +69,22 @@ function AddRecipe(props) {
           {errors.summary && (<p className="danger">{errors.summary}</p>)}
 
           <label className='LabelTitle'>instructions:</label>
+          <p>instructions must be spread by '.'(dot)</p>
           <textarea name='instructions'
-            onChange={(e) => setForm({ ...form, instructions: e.target.value })} />
+            onChange={(e) => setForm({ ...form, instructions: e.target.value.split('.') })} />
+             {/* onChange={handleInputChange} /> */}
+            {/* {errors.instructions && (<p className="danger">{errors.instructions}</p>)} */}
             
-          <label className='LabelTitle'>Diets:</label>
+          {/* <label className='LabelTitle'>new diets:</label>
+            <p>Diets must be spread by ','(coma)</p>
           <textarea name='diets'
-            onChange={handleInputChange} />
+            onChange= {e=>setForm({...form, diets: [...form.diets, e.target.value.split(',')]}) }/> */}
         </div>
         <div className='DietsAndSubmitButton'>
         <label className='LabelTitle'> Diets: </label>
-          {props.diets.map(d => <label className='DietsLabel' key={d.id}><input type='checkbox' name={d.name} value={d.name}
+          {props.diets.map(d => <label className='DietsLabel' key={d}><input type='checkbox' name={d} value={d}
             onChange={(e) => setForm({ ...form, diets: [...form.diets, e.target.value] })}
-          />{d.name}</label>)}
+          />{d}</label>)}
           {/* <button className='NewRecipeSubmitButton' type='submit'>Submit</button> */}
           {!errors.name && !errors.summary &&
           <button className='NewRecipeSubmitButton' type='submit' >Submit</button>}

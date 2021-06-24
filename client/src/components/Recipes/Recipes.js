@@ -66,7 +66,7 @@ function Recipes({ location, allRecipes, searchedRecipes, searchRecipes, getReci
     }
   }
   function handleFilter(param) {
-    if (param !== undefined && param.length){return setRecipes(recipes.filter(r => r.diet.includes(param.toLowerCase())))
+    if (param !== undefined && param.length){return setRecipes(recipes.filter(r =>r.diet!==undefined? r.diet.includes(param.toLowerCase()): r.diets.includes(param.toLowerCase())))
    } else {return setRecipes([...allRecipes])};
   }
     /* {props.diet[0].name?props.diets.filter(d=>props.diet.forEach(e=>e.name.includes(d.name.toLowerCase))):props.diets.filter(d =>  {return props.diet.includes(d.name.toLowerCase())})
@@ -98,7 +98,7 @@ function mapStateToProps(state) {
   return {
     allRecipes: state.allRecipes,
     searchedRecipes: state.searchedRecipes,
-    diets: state.allDiets
+    // diets: state.allDiets
   }
 }
 
