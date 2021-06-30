@@ -41,7 +41,6 @@ const getNine = async (req, res) => {
     // const nueve= [];
     try {
         const recipeResponses = await axios.get(`${BASE_URL}${BASE_NEXT}?${RECEPE_DETAIL}&${API_KEY}&number=20`);
-        // "https://api.spoonacular.com/recipes/complexSearch?&addRecipeInformation=true&apiKey=40eb347614844e4ebd3af15d526c3d7e
         recipeResponses.data.results.forEach(recipe => {
             let {id, title, spoonacularScore, summary, healthScore, instructions, diets, image} = recipe;
             if (recipe.title.toLowerCase().includes(name)){ 
@@ -122,7 +121,7 @@ let ids = 10;
 const postRecipe = async (req, res, next)=>{
     const id = uuid();
     let array = [];
-    const { title, summary, spoonacularScore, healthScore, instructions, diets, image } = req.body;
+    const { title, summary, spoonacularScore, healthScore, instructions, diets} = req.body;
     if (Array.isArray(diets)){
         for(let i=0; i<diets.length; i++){
             let name = diets[i];

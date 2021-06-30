@@ -51,13 +51,15 @@
   #ins{
     padding: 1rem;
   }
-  
+  .BackButton:hover{
+    background-color: rosybrown;
+  }
   .BackButton {
     position: absolute;
-    right: 4rem;
-    top: 6rem;
+    left: 15rem;
+    top: 7rem;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     border-radius: 100%;
     outline: none;

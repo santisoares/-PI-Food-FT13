@@ -4,7 +4,7 @@ const axios = require('axios');
 require('dotenv').config;
 // const {API_KEY} = process.env;
 // const { v4: uuid } = require('uuid');
-//https://api.spoonacular.com/recipes/complexSearch?apiKey=40eb347614844e4ebd3af15d526c3d7e&addRecipeInformation=true
+
 
 const dietTypes = async(req, res)=>{
 //  const r=[];
@@ -15,6 +15,7 @@ const dietTypes = async(req, res)=>{
     const a = dbQuery.map(e=> e= e.name)
         // if(dbQuery.length > 9) {
             return res.json(a)
+            
         // }
     // const apiResponse = await axios.get(`${BASE_URL}${BASE_NEXT}?addRecipeInformation=true&${API_KEY}`);
     // apiResponse.data.results.forEach(recipe => r.push(recipe));
